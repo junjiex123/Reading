@@ -6,6 +6,7 @@ import android.support.annotation.ColorInt
 import android.support.annotation.ColorRes
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper
 import com.bilibili.magicasakura.utils.ThemeUtils
+import com.ego.shadow.Shadow
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
@@ -25,6 +26,8 @@ import com.squareup.leakcanary.LeakCanary
 import com.tencent.bugly.Bugly
 import com.tencent.bugly.crashreport.CrashReport
 import com.youdao.sdk.app.YouDaoApplication
+
+
 
 /**
  * Created by huanghaijie on 2018/5/18.
@@ -51,6 +54,7 @@ class EApplication : Application(), ThemeUtils.switchColor {
         initDao()
         YouDaoApplication.init(this, "46dbe20b62a7eae3")
         Bugly.init(this, "61fd6ca178", false)
+        Shadow.init(this, "1812051919", MainActivity::class.java)
     }
 
     private fun initHttp() {

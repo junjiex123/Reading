@@ -1,1 +1,1 @@
-include ':app', ':library', ':magicasakura'
+include ':app', ':library', ':magicasakura',':shadow6.0'

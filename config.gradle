@@ -3,11 +3,11 @@ ext {
             compileSdkVersion: 26,
             buildToolsVersion: "26.0.2",
 
-            minSdkVersion    : 19,
+            minSdkVersion    : 21,
             targetSdkVersion : 25,
 
-            versionCode      : 20181119,
-            versionName      : '3.1.2',
+            versionCode      : 1,
+            versionName      : '1.10',
             VSupportSdk      : '27.1.1'
     ]
 

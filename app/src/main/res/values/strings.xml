@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Reading</string>
+    <string name="app_name">五小牛</string>
     <string name="title_home">首页</string>
     <string name="title_wxarticle">公众号</string>
     <string name="title_gank">干货</string>
@@ -24,19 +24,19 @@
     <string name="drawer_collect">我的收藏</string>
     <string name="drawer_note">单词本</string>
     <string name="drawer_pwd">账号本子</string>
-    <string name="drawer_about">关于Reading</string>
+    <string name="drawer_about">关于五小牛</string>
     <string name="drawer_exit">退出</string>
     <string name="drawer_select_header">请选择图片</string>
 
     <string name="about_version">版本号</string>
-    <string name="about_use">Reading用途</string>
+    <string name="about_use">五小牛用途</string>
     <string name="about_license">License</string>
     <string name="about_follow">关注我</string>
     <string name="about_close">关闭</string>
     <string name="about_rate">评分</string>
     <string name="about_license_content">Copyright 2018 Hankkin \n </string>
-    <string name="about_use_content">Reading是一款基于WanAndroid OpenApi开发的阅读类工具，如果你是一个热衷于Android开发者，那么这款软件能帮助你阅读精品Android文章。
-    同时Reading中还包含"英文单词"、"账号本子"、"天气"、"查单词"、"快递查询"等小工具。项目基于"Kotlin+MVP"架构开发，风格大概也许属于Material Desgin原质化风格，包含主题颜色切换、百变Logo、
+    <string name="about_use_content">五小牛是一款基于WanAndroid OpenApi开发的阅读类工具，如果你是一个热衷于Android开发者，那么这款软件能帮助你阅读精品Android文章。
+    同时五小牛中还包含"英文单词"、"账号本子"、"天气"、"查单词"、"快递查询"等小工具。项目基于"Kotlin+MVP"架构开发，风格大概也许属于Material Desgin原质化风格，包含主题颜色切换、百变Logo、
         等功能。在此感谢WanAndroid的OpenApi,以及其它开源项目的贡献。</string>
 
     <string name="article_detail_share">分享</string>
@@ -155,7 +155,7 @@
     <string name="setting_logo_hint">开启百变logo后，部分机型可能会因此导致代码崩溃，请问您是否确定开启百变Logo？</string>
     <string name="setting_logo_success">开启百变logo成功</string>
     <string name="setting_lock_hint">请注意，为了保护您的账号密码安全，建议开启账号锁，账号本子利用本地数据库进行缓存，密码进行加密。同时账号本子备份到您的手机中，请您放心使用。</string>
-    <string name="setting_lock_backup_hint">开启账号备份后，您保存的账号、单词本将会被扫描，方便您清除缓存或者卸载软件后，下次进入Reading可直接使用您的账号本子、单词本功能。</string>
+    <string name="setting_lock_backup_hint">开启账号备份后，您保存的账号、单词本将会被扫描，方便您清除缓存或者卸载软件后，下次进入五小牛可直接使用您的账号本子、单词本功能。</string>
     <string name="setting_img">默认加载图片</string>
     <string name="setting_clear_cache">清除缓存</string>
     <string name="setting_update">检查更新</string>
