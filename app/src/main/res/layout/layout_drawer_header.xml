@@ -51,6 +51,7 @@
                     android:paddingTop="@dimen/dp_16">
 
                     <TextView
+                        android:visibility="gone"
                         android:textStyle="italic"
                         android:id="@+id/tv_username"
                         android:layout_width="match_parent"
