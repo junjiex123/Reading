@@ -46,6 +46,7 @@ object Constant {
 
     object GankUrl{
         const val BASE_URL = "https://gank.io/api/"
+//        const val BASE_URL = "http://gank.io/api/"
     }
 
     object OSChinaUrl {

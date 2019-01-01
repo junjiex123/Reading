@@ -25,7 +25,7 @@ object HttpClient {
 
     fun getBuilder(apiUrl: String): Retrofit.Builder {
         val builder = Retrofit.Builder()
-        builder.client(mHttpClient as OkHttpClient?)
+        builder.client(mHttpClient)
         builder.baseUrl(apiUrl)//设置远程地址
         builder.addConverterFactory(GsonConverterFactory.create())
         builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -33,11 +33,12 @@ object HttpClient {
     }
 
     private val mHttpClient by lazy {
+
             OkHttpClient.Builder()
                     .sslSocketFactory(createSSLSocketFactory())
                     .hostnameVerifier { _, _ -> true }
                     .addInterceptor({ chain -> addHeader(chain) })
-                    .addInterceptor(NetLogInterceptor(NetLogInterceptor.Level.BODY) { LogUtils.d(it) })
+                    //.addInterceptor(NetLogInterceptor(NetLogInterceptor.Level.BODY) { LogUtils.d(it) })
                     .connectTimeout(DEFAULT_TIME_OUT, TimeUnit.MILLISECONDS)
                     .cookieJar(HttpConfig.getCookie())
                     .build()
@@ -47,13 +48,18 @@ object HttpClient {
 
     private fun addHeader(chain: Interceptor.Chain): Response {
         val request = chain.request()
-        val build = request.newBuilder()
-                .addHeader("X-Requested-With", "XMLHttpRequest")
-                .addHeader("Platform", "Android")
-                .addHeader("Version", "1.0.0")
-                .addHeader("User-Agent", "(Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0")
-                .build()
-        return chain.proceed(build)
+        try {
+            val build = request.newBuilder()
+                    .addHeader("X-Requested-With", "XMLHttpRequest")
+                    .addHeader("Platform", "Android")
+                    .addHeader("Version", "1.0.0")
+                    .addHeader("User-Agent", "(Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0")
+                    .build()
+            return chain.proceed(build)
+        }catch (e:Exception){
+            return chain.proceed(request)
+        }
+
     }
 
 

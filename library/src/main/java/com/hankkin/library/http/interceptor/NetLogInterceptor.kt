@@ -93,8 +93,8 @@ class NetLogInterceptor @JvmOverloads constructor(lv: Level = Level.BODY, privat
         return level
     }
 
-    @Throws(Exception::class)
-    override fun intercept(chain: Interceptor.Chain): Response {
+    @Throws(IOException::class)
+    override fun intercept(chain: Interceptor.Chain): Response? {
         val level = this.level
 
         val request = chain.request()
@@ -163,6 +163,9 @@ class NetLogInterceptor @JvmOverloads constructor(lv: Level = Level.BODY, privat
         }
 
         val startNs = System.nanoTime()
+
+
+
         val  response = chain.proceed(request)
         val tookMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNs)
 
@@ -208,6 +211,7 @@ class NetLogInterceptor @JvmOverloads constructor(lv: Level = Level.BODY, privat
         }
 
         return response
+
     }
 
     private fun bodyEncoded(headers: Headers): Boolean {

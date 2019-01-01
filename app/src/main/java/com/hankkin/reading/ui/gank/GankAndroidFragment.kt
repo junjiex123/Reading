@@ -11,6 +11,7 @@ import com.hankkin.reading.adapter.GankAdapter
 import com.hankkin.reading.adapter.base.XRecyclerView
 import com.hankkin.reading.base.BaseMvpFragment
 import com.hankkin.reading.domain.GankBean
+import com.hankkin.reading.utils.NetWorkUtil
 import com.hankkin.reading.utils.ViewHelper
 import kotlinx.android.synthetic.main.fragment_gank_item.*
 
@@ -53,6 +54,9 @@ class GankAndroidFragment : BaseMvpFragment<GankPresenter>(), GankContract.IView
     }
 
     override fun initData() {
+        if(!NetWorkUtil.networkConnected(context)){
+            return;
+        }
         getPresenter().getGanks(GANK_CATE, mPage)
     }
 

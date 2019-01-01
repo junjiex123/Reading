@@ -6,6 +6,7 @@ import com.hankkin.reading.R
 import com.hankkin.reading.adapter.GankAdapter
 import com.hankkin.reading.base.BaseMvpFragment
 import com.hankkin.reading.domain.GankToadyBean
+import com.hankkin.reading.utils.NetWorkUtil
 import com.hankkin.reading.utils.ViewHelper
 import kotlinx.android.synthetic.main.fragment_gank_item.*
 
@@ -37,6 +38,10 @@ class GankTodayFragment : BaseMvpFragment<GankTodayPresenter>(), GankTodayContra
     }
 
     override fun initData() {
+
+        if(!NetWorkUtil.networkConnected(context)){
+            return;
+        }
         getPresenter().getGanksToday()
     }
 
