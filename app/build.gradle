@@ -11,7 +11,7 @@ android {
     sourceSets.main.jniLibs.srcDirs = ['libs']
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.reading.wxniu"
+        applicationId "com.reading.ssy"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
@@ -25,7 +25,7 @@ android {
         }
 
         manifestPlaceholders = [
-                jpush_appkey : "8fa3fbf50076a06dab1458f3"//1、粘贴极光appkey，JPush上注册的包名对应的appkey
+                jpush_appkey : "cc19c04fd3612019d34467ab"//1、粘贴极光appkey，JPush上注册的包名对应的appkey
         ]
     }
     buildTypes {

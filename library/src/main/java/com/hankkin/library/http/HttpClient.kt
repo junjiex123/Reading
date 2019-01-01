@@ -25,7 +25,7 @@ object HttpClient {
 
     fun getBuilder(apiUrl: String): Retrofit.Builder {
         val builder = Retrofit.Builder()
-        builder.client(mHttpClient)
+        builder.client(mHttpClient as OkHttpClient?)
         builder.baseUrl(apiUrl)//设置远程地址
         builder.addConverterFactory(GsonConverterFactory.create())
         builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -33,14 +33,15 @@ object HttpClient {
     }
 
     private val mHttpClient by lazy {
-        OkHttpClient.Builder()
-                .sslSocketFactory(createSSLSocketFactory())
-                .hostnameVerifier { _, _ -> true }
-                .addInterceptor({ chain -> addHeader(chain) })
-                .addInterceptor(NetLogInterceptor(NetLogInterceptor.Level.BODY) { LogUtils.d(it) })
-                .connectTimeout(DEFAULT_TIME_OUT, TimeUnit.MILLISECONDS)
-                .cookieJar(HttpConfig.getCookie())
-                .build()
+            OkHttpClient.Builder()
+                    .sslSocketFactory(createSSLSocketFactory())
+                    .hostnameVerifier { _, _ -> true }
+                    .addInterceptor({ chain -> addHeader(chain) })
+                    .addInterceptor(NetLogInterceptor(NetLogInterceptor.Level.BODY) { LogUtils.d(it) })
+                    .connectTimeout(DEFAULT_TIME_OUT, TimeUnit.MILLISECONDS)
+                    .cookieJar(HttpConfig.getCookie())
+                    .build()
+
     }
 
 

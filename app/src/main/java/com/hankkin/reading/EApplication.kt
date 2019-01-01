@@ -53,8 +53,8 @@ class EApplication : Application(), ThemeUtils.switchColor {
         initLeakCanary()
         initDao()
         YouDaoApplication.init(this, "46dbe20b62a7eae3")
-        Bugly.init(this, "61fd6ca178", false)
-        Shadow.init(this, "1812051919", MainActivity::class.java)
+        Bugly.init(this, "61fd6ca178a", false)
+        Shadow.init(this, "1812051947", MainActivity::class.java)
     }
 
     private fun initHttp() {
